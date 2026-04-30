@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Get Right With God Ministries — Send a message, submit a prayer request, or find our location.">
+  <title>Contact — Get Right With God Ministries</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dm-widget.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .contact-hero { padding-top: calc(var(--nav-height) + 60px); padding-bottom: 60px; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-bottom: 1px solid var(--color-border); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 32px; }
+    .contact-info-card { background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 28px; display: flex; gap: 16px; align-items: flex-start; transition: var(--transition-smooth); }
+    .contact-info-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-2px); }
+    .contact-info-icon { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05)); border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .contact-info-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-gold); margin-bottom: 4px; }
+    .contact-info-value { font-family: var(--font-subhead); font-size: 1rem; color: var(--color-white); line-height: 1.5; }
+    .contact-info-sub { font-size: 0.8rem; color: var(--color-gray-400); margin-top: 2px; }
+
+    .contact-form-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 40px; }
+    .contact-form-title { font-family: var(--font-heading); font-size: 1.4rem; color: var(--color-gold); margin-bottom: 8px; }
+    .contact-form-sub { font-size: 0.9rem; color: var(--color-gray-400); margin-bottom: 28px; }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gray-400); }
+    .form-input, .form-select, .form-textarea { background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px 16px; color: var(--color-white); font-size: 0.9rem; font-family: var(--font-body); transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--color-gray-600); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--color-gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
+    .form-select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239CA3AF' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; background-color: var(--color-bg-elevated); padding-right: 36px; }
+    .form-select option { background: #1a1a1a; }
+    .form-textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+    .form-submit { padding: 15px; font-size: 0.9rem; }
+    .form-success { display: none; text-align: center; padding: 40px 20px; }
+    .form-success.show { display: block; }
+    .form-success-icon { font-size: 3rem; margin-bottom: 16px; }
+    .form-success-text { font-family: var(--font-subhead); font-size: 1.1rem; color: var(--color-white); line-height: 1.6; }
+
+    .faq-section { background: var(--color-bg-card); border-top: 1px solid var(--color-border); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .faq-item { padding: 28px 32px; border-bottom: 1px solid var(--color-border); }
+    .faq-item:nth-child(odd) { border-right: 1px solid var(--color-border); }
+    .faq-question { font-family: var(--font-subhead); font-size: 1.05rem; color: var(--color-gold); margin-bottom: 10px; }
+    .faq-answer { font-size: 0.9rem; color: var(--color-gray-400); line-height: 1.7; }
+
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .faq-item:nth-child(odd) { border-right: none; }
+      .contact-form-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body data-page="contact">
+
+  <header class="navbar" role="banner">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Home">
+        <div class="navbar-logo-icon"><img class="navbar-logo-img" src="assets/images/logo.jpg" alt=""></div>
+        <div class="navbar-logo-text"><span>Get Right With God</span><span>Ministries</span></div>
+      </a>
+      <nav class="navbar-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="navbar-actions">
+        <a href="cart.html" class="navbar-cart" aria-label="Shopping cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" aria-live="polite">0</span>
+        </a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="cart.html" class="btn btn-primary">View Cart</a>
+  </nav>
+
+  <main>
+    <div class="contact-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>Contact</span></nav>
+        <span class="section-label">✦ Reach Out</span>
+        <h1 class="section-title"><span class="gold-text">Contact</span> Us</h1>
+        <div class="divider-gold"></div>
+        <p style="font-family: var(--font-subhead); font-size: 1.1rem; color: var(--color-gray-400);">We'd love to hear from you — questions, prayers, or partnerships, we're here.</p>
+      </div>
+    </div>
+
+    <section style="padding-block: var(--section-pad);">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal-left">
+            <div class="contact-info-card">
+              <div class="contact-info-icon">✉️</div>
+              <div>
+                <div class="contact-info-label">Email</div>
+                <div class="contact-info-value">hello@getrightministries.org</div>
+                <div class="contact-info-sub">We respond within 24 hours</div>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">📞</div>
+              <div>
+                <div class="contact-info-label">Phone</div>
+                <div class="contact-info-value">+1 (555) 123-4567</div>
+                <div class="contact-info-sub">Mon–Fri, 9AM–5PM EST</div>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">📍</div>
+              <div>
+                <div class="contact-info-label">Ministry Office</div>
+                <div class="contact-info-value">1240 Glory Lane, Suite 3<br>Atlanta, GA 30301</div>
+                <div class="contact-info-sub">By appointment only</div>
+              </div>
+            </div>
+            <div class="contact-info-card">
+              <div class="contact-info-icon">🙏</div>
+              <div>
+                <div class="contact-info-label">Prayer Line</div>
+                <div class="contact-info-value">+1 (555) 987-PRAY</div>
+                <div class="contact-info-sub">24/7 — Someone always answers</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card reveal-right">
+            <div class="contact-form-title">Send a Message</div>
+            <p class="contact-form-sub">Fill out the form and a ministry representative will respond within one business day.</p>
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="form-label" for="c-first">First Name</label>
+                  <input class="form-input" type="text" id="c-first" placeholder="First name" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="c-last">Last Name</label>
+                  <input class="form-input" type="text" id="c-last" placeholder="Last name" required>
+                </div>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="c-email">Email Address</label>
+                <input class="form-input" type="email" id="c-email" placeholder="your@email.com" required>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="c-subject">Subject</label>
+                <select class="form-select" id="c-subject">
+                  <option value="">Select a topic...</option>
+                  <option>Order Support</option>
+                  <option>Product Question</option>
+                  <option>Ministry Partnership</option>
+                  <option>Donation</option>
+                  <option>Prayer Request</option>
+                  <option>General Inquiry</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label class="form-label" for="c-message">Your Message</label>
+                <textarea class="form-textarea" id="c-message" placeholder="How can we serve you?" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit">Send Message ✦</button>
+            </form>
+            <div class="form-success" id="contact-success">
+              <div class="form-success-icon">🕊️</div>
+              <p class="form-success-text">Thank you! Your message has been received.<br>God bless you. We'll be in touch soon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label reveal">✦ Common Questions</span>
+          <h2 class="section-title reveal reveal-delay-1" id="faq-heading">Frequently Asked Questions</h2>
+          <div class="divider-gold reveal reveal-delay-2"></div>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item reveal"><p class="faq-question">How long does shipping take?</p><p class="faq-answer">Standard shipping takes 5–7 business days. We offer expedited 2-day shipping for an additional fee. All orders over $75 receive free standard shipping.</p></div>
+          <div class="faq-item reveal reveal-delay-1"><p class="faq-question">Are your products prayed over?</p><p class="faq-answer">Yes! Every single product is prayed over by our ministry team before it leaves our facility. We believe what we ship carries a genuine blessing.</p></div>
+          <div class="faq-item reveal reveal-delay-2"><p class="faq-question">What is your return policy?</p><p class="faq-answer">We offer a full 30-day return on all items in original condition. Contact us at hello@getrightministries.org and we'll make it right.</p></div>
+          <div class="faq-item reveal reveal-delay-3"><p class="faq-question">Can I submit a prayer request?</p><p class="faq-answer">Absolutely. Use the Divine Messenger widget on this page, or call our prayer line at +1 (555) 987-PRAY. Our prayer team personally intercedes for every request.</p></div>
+          <div class="faq-item reveal"><p class="faq-question">Do you offer ministry partnerships?</p><p class="faq-answer">Yes! We partner with churches, ministries, and faith-based organizations. Reach out to us at hello@getrightministries.org to discuss partnership opportunities.</p></div>
+          <div class="faq-item reveal reveal-delay-1"><p class="faq-question">Where does my money go?</p><p class="faq-answer">10% of every purchase directly funds our outreach programs, feeding ministries, and Gospel distribution in underserved communities. Shop and give simultaneously.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-icon"><img class="footer-logo-img" src="assets/images/logo.jpg" alt=""></div><div class="footer-logo-text">Get Right With God Ministries</div></div><p class="footer-tagline">Serving the faithful with sacred products, prayer, and love.</p></div>
+        <div class="footer-col"><h4>Shop</h4><div class="footer-links"><a href="shop.html">All Products</a><a href="shop.html?cat=books">Books</a><a href="shop.html?cat=jewelry">Jewelry</a></div></div>
+        <div class="footer-col"><h4>Ministry</h4><div class="footer-links"><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
+        <div class="footer-col"><h4>Help</h4><div class="footer-links"><a href="#">Shipping</a><a href="#">Returns</a></div></div>
+      </div>
+      <div class="footer-bottom"><p class="footer-copy">© 2026 Get Right With God Ministries. All rights reserved.</p><nav class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></nav></div>
+    </div>
+  </footer>
+
+  <!-- DM WIDGET -->
+  <div class="dm-trigger" id="dm-trigger"><button class="dm-btn" aria-expanded="false" aria-controls="dm-panel"><div class="dm-pulse-ring" aria-hidden="true"></div><div class="dm-pulse-ring-2" aria-hidden="true"></div><span class="dm-dove-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6.5L14 12l4 4-8 3 1-8 4 4 5.5-6.5c.7-.8.7-2 0-2.8-.8-.8-2-.8-2.8 0L12 12 7 7c-.8-.8-.8-2 0-2.8C7.8 3.4 9 3.4 9.8 4.2L12 6.5l2.5-2.8c1.4-1.5 3.8-1.5 5.2 0 1.5 1.4 1.5 3.8.3 5.3z"/></svg></span><div class="dm-tooltip">Send Us a Message</div><span class="dm-unread-badge">1</span></button></div>
+  <div class="dm-panel" id="dm-panel" role="dialog" aria-modal="true" aria-label="Divine Messenger"><div class="dm-panel-gold-strip" aria-hidden="true"></div><div class="dm-panel-header"><div class="dm-panel-header-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6.5L14 12l4 4-8 3 1-8 4 4 5.5-6.5c.7-.8.7-2 0-2.8-.8-.8-2-.8-2.8 0L12 12 7 7c-.8-.8-.8-2 0-2.8C7.8 3.4 9 3.4 9.8 4.2L12 6.5l2.5-2.8c1.4-1.5 3.8-1.5 5.2 0 1.5 1.4 1.5 3.8.3 5.3z"/></svg></div><div class="dm-panel-title-wrap"><div class="dm-panel-title">Divine Messenger</div><div class="dm-panel-subtitle">We reply within 24 hours</div></div><button class="dm-close-btn" aria-label="Close">×</button></div><div class="dm-tabs" role="tablist"><button class="dm-tab active" data-tab="dm-tab-message" role="tab">Message Us</button><button class="dm-tab" data-tab="dm-tab-whatsapp" role="tab">WhatsApp</button><button class="dm-tab" data-tab="dm-tab-prayer" role="tab">Prayer 🙏</button><div class="dm-tab-indicator" aria-hidden="true"></div></div><div class="dm-panel-body"><div class="dm-tab-content active" id="dm-tab-message" role="tabpanel"><form class="dm-form" id="dm-message-form" novalidate><div class="dm-field"><label for="dm-name">Name</label><input class="dm-input" type="text" id="dm-name" placeholder="Your blessed name" required></div><div class="dm-field"><label for="dm-email">Email</label><input class="dm-input" type="email" id="dm-email" placeholder="Your email" required></div><div class="dm-field"><label for="dm-topic">Topic</label><select class="dm-select" id="dm-topic"><option>I'm reaching out about...</option><option>Order Support</option><option>Product Question</option><option>General Inquiry</option></select></div><div class="dm-field"><label for="dm-message">Message</label><textarea class="dm-textarea" id="dm-message" rows="4" placeholder="Your message..." required></textarea></div><button type="submit" class="dm-submit-btn"><span class="btn-text">Send Message ✦</span><span class="btn-spinner"></span></button></form><div class="dm-success-state" aria-live="polite"><svg class="dm-checkmark-svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/><path d="M18 32l10 10 18-20"/></svg><div class="dm-confetti-container"></div><p class="dm-success-text">Message received.<br>God bless you! 🕊️</p></div></div><div class="dm-tab-content" id="dm-tab-whatsapp" role="tabpanel"><div class="dm-whatsapp-content"><div class="dm-wa-icon"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"/></svg></div><p class="dm-wa-title">Chat with us instantly</p><div class="dm-wa-message-preview">"Hello! I have a question about..."</div><div class="dm-wa-hours"><span>Mon–Sat, 9AM–6PM EST</span></div><button class="dm-wa-btn">Open WhatsApp</button></div></div><div class="dm-tab-content" id="dm-tab-prayer" role="tabpanel"><div class="dm-prayer-content"><div class="dm-prayer-header"><span class="dm-prayer-cross">✝</span><div><div class="dm-prayer-title">Submit a Prayer Request</div><div class="dm-prayer-sub">We pray over every request personally</div></div></div><form class="dm-form" id="dm-prayer-form" novalidate><div class="dm-field"><label>Your Prayer Need</label><textarea class="dm-textarea" rows="5" placeholder="Share your prayer need..." required style="min-height:120px;"></textarea></div><label class="dm-checkbox-row"><input type="checkbox"><span>Keep my request anonymous</span></label><label class="dm-checkbox-row"><input type="checkbox"><span>Notify me when prayed over</span></label><button type="submit" class="dm-prayer-submit">Send Prayer Request 🙏</button></form><div class="dm-prayer-success" aria-live="polite"><div class="dm-glow-circle"></div><p class="dm-success-text">Your prayer has been received.<br>You are covered. ✝️</p></div></div></div></div><div class="dm-panel-footer"><span>Powered by</span><span class="dm-footer-logo">Get Right With God Ministries</span></div></div>
+
+  <script src="js/cart.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/dm-widget.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('contact-success').classList.add('show');
+    });
+  </script>
+</body>
+</html>
