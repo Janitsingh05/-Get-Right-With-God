@@ -1,18 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700;900&display=swap');
 
 :root {
-  --color-bg:          #0A0A0A;
-  --color-bg-card:     #111111;
-  --color-bg-elevated: #1A1A1A;
-  --color-gold:        #C9A84C;
-  --color-gold-light:  #E8C96A;
-  --color-gold-dark:   #A07830;
-  --color-gold-glow:   rgba(201,168,76,0.35);
+  /* BACKGROUNDS — warm white light theme */
+  --color-bg:          #FAF8F4;
+  --color-bg-card:     #FFFFFF;
+  --color-bg-elevated: #F5F0E8;
+
+  /* TEXT — warm dark tones for light bg */
+  --color-text-primary:   #1A1208;
+  --color-text-secondary: #5C4A2A;
+  --color-text-muted:     #8B7355;
+
+  /* GOLD — slightly deeper for light bg legibility */
+  --color-gold:        #B8860B;
+  --color-gold-light:  #D4A017;
+  --color-gold-dark:   #8B6914;
+  --color-gold-glow:   rgba(184,134,11,0.2);
+
+  /* KEEP for on-dark areas (footer, hero overlay, DM panel) */
   --color-white:       #FFFFFF;
   --color-gray-400:    #9CA3AF;
   --color-gray-600:    #4B5563;
   --color-heaven-blue: #D4E9F7;
-  --color-border:      rgba(201,168,76,0.2);
+
+  /* BORDERS */
+  --color-border:      rgba(184,134,11,0.25);
+  --color-border-soft: rgba(0,0,0,0.08);
+
+  /* FOOTER */
+  --color-footer-bg:   #1A1208;
 
   --font-heading:   'Cinzel Decorative', serif;
   --font-subhead:   'Cormorant Garamond', serif;
@@ -23,8 +39,10 @@
   --radius-lg:   20px;
   --radius-full: 9999px;
 
-  --shadow-gold: 0 8px 32px rgba(201,168,76,0.25);
-  --shadow-deep: 0 24px 64px rgba(0,0,0,0.6);
+  --shadow-card:       0 4px 24px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 12px 40px rgba(0,0,0,0.13), 0 4px 12px rgba(0,0,0,0.07);
+  --shadow-gold:       0 8px 32px rgba(184,134,11,0.2);
+  --shadow-deep:       0 24px 64px rgba(0,0,0,0.6);
 
   --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-spring: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);

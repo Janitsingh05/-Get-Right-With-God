@@ -7,14 +7,18 @@
   height: var(--nav-height);
   display: flex;
   align-items: center;
+  background: rgba(250, 248, 244, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(184,134,11,0.15);
   transition: background var(--transition-smooth), box-shadow var(--transition-smooth), backdrop-filter var(--transition-smooth);
 }
 
 .navbar.scrolled {
-  background: rgba(10, 10, 10, 0.92);
+  background: rgba(250, 248, 244, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 1px 0 rgba(201,168,76,0.15), 0 4px 24px rgba(0,0,0,0.4);
+  box-shadow: 0 1px 0 rgba(184,134,11,0.2), 0 4px 24px rgba(0,0,0,0.08);
 }
 
 .navbar-inner {
@@ -60,7 +64,7 @@
 .navbar-logo-text span:first-child {
   font-family: var(--font-heading);
   font-size: 0.85rem;
-  color: var(--color-gold);
+  color: var(--color-gold-dark);
   letter-spacing: 0.06em;
 }
 
@@ -69,7 +73,7 @@
   font-size: 0.6rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-gray-400);
+  color: var(--color-text-muted);
 }
 
 .navbar-nav {
@@ -85,7 +89,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-gray-400);
+  color: var(--color-text-secondary);
   transition: color var(--transition-smooth);
 }
 
@@ -125,7 +129,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  color: var(--color-white);
+  color: var(--color-text-secondary);
   transition: background var(--transition-smooth);
 }
 
@@ -178,7 +182,7 @@
 .hamburger span {
   display: block;
   height: 1.5px;
-  background: var(--color-white);
+  background: var(--color-text-secondary);
   border-radius: 2px;
   transition: var(--transition-smooth);
   transform-origin: center;
@@ -244,35 +248,3 @@
   justify-content: center;
 }
 
-/* Homepage: light navbar over the light hero, darkens on scroll */
-body[data-page="home"] .navbar:not(.scrolled) {
-  background: rgba(247, 243, 238, 0.96);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(160, 120, 48, 0.15);
-}
-
-body[data-page="home"] .navbar:not(.scrolled) .navbar-logo-text span:first-child {
-  color: var(--color-gold-dark);
-}
-
-body[data-page="home"] .navbar:not(.scrolled) .navbar-logo-text span:last-child {
-  color: #7a6050;
-}
-
-body[data-page="home"] .navbar:not(.scrolled) .navbar-nav a {
-  color: #5a4a3a;
-}
-
-body[data-page="home"] .navbar:not(.scrolled) .navbar-nav a:hover,
-body[data-page="home"] .navbar:not(.scrolled) .navbar-nav a.active {
-  color: var(--color-gold-dark);
-}
-
-body[data-page="home"] .navbar:not(.scrolled) .navbar-cart {
-  color: #5a4a3a;
-}
-
-body[data-page="home"] .navbar:not(.scrolled) .hamburger span {
-  background: #5a4a3a;
-}

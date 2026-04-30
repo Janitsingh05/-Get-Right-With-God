@@ -1,6 +1,6 @@
 body {
   background-color: var(--color-bg);
-  color: var(--color-white);
+  color: var(--color-text-primary);
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
@@ -21,6 +21,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-heading);
   line-height: 1.15;
   letter-spacing: 0.04em;
+  color: var(--color-text-primary);
 }
 
 h1 { font-size: clamp(2rem, 5vw, 4rem); }
@@ -40,14 +41,14 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
 
 .section-title {
   font-family: var(--font-heading);
-  color: var(--color-white);
+  color: var(--color-text-primary);
   margin-bottom: 16px;
 }
 
 .section-subtitle {
   font-family: var(--font-subhead);
   font-size: clamp(1rem, 2vw, 1.3rem);
-  color: var(--color-gray-400);
+  color: var(--color-text-secondary);
   font-weight: 300;
   max-width: 600px;
 }
@@ -85,13 +86,13 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
 
 .btn-primary {
   background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold), var(--color-gold-dark));
-  color: #000;
+  color: #fff;
   box-shadow: var(--shadow-gold);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(201,168,76,0.45);
+  box-shadow: 0 12px 40px rgba(184,134,11,0.45);
 }
 
 .btn-outline {
@@ -102,18 +103,18 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
 
 .btn-outline:hover {
   background: var(--color-gold);
-  color: #000;
+  color: #fff;
   transform: translateY(-3px);
 }
 
 .btn-ghost {
-  background: rgba(255,255,255,0.06);
-  color: var(--color-white);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(184,134,11,0.08);
+  color: var(--color-gold-dark);
+  border: 1px solid rgba(184,134,11,0.2);
 }
 
 .btn-ghost:hover {
-  background: rgba(255,255,255,0.12);
+  background: rgba(184,134,11,0.15);
   transform: translateY(-2px);
 }
 
@@ -137,19 +138,19 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
 
 .badge-gold {
   background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold-dark));
-  color: #000;
+  color: #fff;
 }
 
 .badge-new {
-  background: #1a472a;
-  color: #4ade80;
-  border: 1px solid rgba(74,222,128,0.3);
+  background: #d4edda;
+  color: #1a5c2a;
+  border: 1px solid rgba(26,92,42,0.2);
 }
 
 .badge-sale {
-  background: #4a1010;
-  color: #f87171;
-  border: 1px solid rgba(248,113,113,0.3);
+  background: #fde8e8;
+  color: #b91c1c;
+  border: 1px solid rgba(185,28,28,0.2);
 }
 
 .sr-only {
@@ -174,19 +175,20 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
 .page-hero {
   padding-top: calc(var(--nav-height) + 60px);
   padding-bottom: 60px;
-  background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%);
+  background: linear-gradient(180deg, #F5F0E8 0%, var(--color-bg) 100%);
   text-align: center;
   border-bottom: 1px solid var(--color-border);
 }
 
 .page-hero h1 {
   margin-bottom: 16px;
+  color: var(--color-text-primary);
 }
 
 .page-hero p {
   font-family: var(--font-subhead);
   font-size: 1.2rem;
-  color: var(--color-gray-400);
+  color: var(--color-text-secondary);
 }
 
 .breadcrumb {
@@ -194,7 +196,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
   align-items: center;
   gap: 8px;
   font-size: 0.8rem;
-  color: var(--color-gray-400);
+  color: var(--color-text-muted);
   margin-bottom: 24px;
   justify-content: center;
 }
@@ -204,5 +206,5 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
 }
 
 .breadcrumb-sep {
-  color: var(--color-gray-600);
+  color: var(--color-text-muted);
 }
