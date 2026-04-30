@@ -67,6 +67,7 @@
   color: var(--color-text-primary);
   line-height: 1.7;
   flex: 1;
+  text-shadow: var(--shadow-text-body);
 }
 
 .testimonial-author {
@@ -96,6 +97,7 @@
   font-size: 0.9rem;
   color: var(--color-text-primary);
   margin-bottom: 2px;
+  text-shadow: var(--shadow-text-body);
 }
 
 .testimonial-author-loc {

@@ -12,10 +12,10 @@
 }
 
 .navbar.scrolled {
-  background: rgba(250, 248, 244, 0.97);
+  background: rgba(13, 9, 6, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 1px 0 rgba(184,134,11,0.2), 0 4px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 0 rgba(201,168,76,0.2), 0 4px 24px rgba(0,0,0,0.5);
 }
 
 .navbar-inner {
@@ -76,11 +76,11 @@
 }
 
 .navbar.scrolled .navbar-logo-text span:first-child {
-  color: var(--color-gold-dark);
+  color: var(--color-gold-light);
 }
 
 .navbar.scrolled .navbar-logo-text span:last-child {
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .navbar-nav {
@@ -101,7 +101,7 @@
 }
 
 .navbar.scrolled .navbar-nav a {
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .navbar-nav a::after {
@@ -145,7 +145,7 @@
 }
 
 .navbar.scrolled .navbar-cart {
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .navbar-cart:hover {
@@ -204,7 +204,7 @@
 }
 
 .navbar.scrolled .hamburger span {
-  background: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .hamburger.open span:nth-child(1) {
