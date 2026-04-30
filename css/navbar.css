@@ -7,15 +7,12 @@
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  background: rgba(250, 248, 244, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(184,134,11,0.15);
+  background: transparent;
   transition: background var(--transition-smooth), box-shadow var(--transition-smooth), backdrop-filter var(--transition-smooth);
 }
 
 .navbar.scrolled {
-  background: rgba(250, 248, 244, 0.98);
+  background: rgba(250, 248, 244, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 1px 0 rgba(184,134,11,0.2), 0 4px 24px rgba(0,0,0,0.08);
@@ -64,8 +61,9 @@
 .navbar-logo-text span:first-child {
   font-family: var(--font-heading);
   font-size: 0.85rem;
-  color: var(--color-gold-dark);
+  color: var(--color-gold-light);
   letter-spacing: 0.06em;
+  transition: color var(--transition-smooth);
 }
 
 .navbar-logo-text span:last-child {
@@ -73,6 +71,15 @@
   font-size: 0.6rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition-smooth);
+}
+
+.navbar.scrolled .navbar-logo-text span:first-child {
+  color: var(--color-gold-dark);
+}
+
+.navbar.scrolled .navbar-logo-text span:last-child {
   color: var(--color-text-muted);
 }
 
@@ -89,8 +96,12 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.9);
   transition: color var(--transition-smooth);
+}
+
+.navbar.scrolled .navbar-nav a {
+  color: var(--color-text-secondary);
 }
 
 .navbar-nav a::after {
@@ -129,8 +140,12 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  color: rgba(255, 255, 255, 0.9);
+  transition: background var(--transition-smooth), color var(--transition-smooth);
+}
+
+.navbar.scrolled .navbar-cart {
   color: var(--color-text-secondary);
-  transition: background var(--transition-smooth);
 }
 
 .navbar-cart:hover {
@@ -182,10 +197,14 @@
 .hamburger span {
   display: block;
   height: 1.5px;
-  background: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 2px;
   transition: var(--transition-smooth);
   transform-origin: center;
+}
+
+.navbar.scrolled .hamburger span {
+  background: var(--color-text-secondary);
 }
 
 .hamburger.open span:nth-child(1) {
