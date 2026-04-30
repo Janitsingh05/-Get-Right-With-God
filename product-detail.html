@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Product details — Get Right With God Ministries">
+  <title>Product — Get Right With God Ministries</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dm-widget.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .product-detail-section { padding-top: calc(var(--nav-height) + 48px); }
+    .product-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-bottom: 80px; }
+    .product-gallery { position: sticky; top: calc(var(--nav-height) + 24px); }
+    .product-main-img { aspect-ratio: 1; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 8rem; margin-bottom: 16px; }
+    .product-thumbs { display: flex; gap: 10px; }
+    .product-thumb { width: 72px; height: 72px; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 2rem; cursor: pointer; transition: border-color var(--transition-smooth); }
+    .product-thumb.active, .product-thumb:hover { border-color: var(--color-gold); }
+    .product-info-panel { display: flex; flex-direction: column; gap: 24px; }
+    .product-info-category { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-gold); }
+    .product-info-name { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--color-white); line-height: 1.2; }
+    .product-info-rating { display: flex; align-items: center; gap: 10px; }
+    .product-info-price { display: flex; align-items: baseline; gap: 14px; }
+    .product-info-price .main-price { font-family: var(--font-heading); font-size: 2rem; color: var(--color-gold); }
+    .product-info-price .orig-price { font-size: 1.1rem; color: var(--color-gray-600); text-decoration: line-through; }
+    .product-info-desc { font-family: var(--font-subhead); font-size: 1.05rem; color: var(--color-gray-400); line-height: 1.8; }
+    .product-qty-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .qty-input-wrap { display: flex; align-items: center; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
+    .qty-input-wrap button { width: 40px; height: 48px; background: var(--color-bg-elevated); color: var(--color-white); font-size: 1.2rem; transition: background var(--transition-smooth); }
+    .qty-input-wrap button:hover { background: rgba(201,168,76,0.15); }
+    .qty-input-wrap input { width: 52px; height: 48px; text-align: center; background: transparent; border: none; color: var(--color-white); font-size: 1rem; font-family: var(--font-body); }
+    .product-add-full { flex: 1; min-width: 160px; }
+    .product-features { display: flex; flex-direction: column; gap: 10px; padding: 20px; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+    .product-feature { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--color-gray-400); }
+    .product-feature-icon { color: var(--color-gold); font-size: 1rem; flex-shrink: 0; }
+    .related-section { border-top: 1px solid var(--color-border); padding-top: 60px; }
+    @media (max-width: 768px) {
+      .product-detail-grid { grid-template-columns: 1fr; gap: 40px; }
+      .product-gallery { position: static; }
+    }
+  </style>
+</head>
+<body data-page="product-detail">
+
+  <header class="navbar" role="banner">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Home">
+        <div class="navbar-logo-icon"><img class="navbar-logo-img" src="assets/images/logo.jpg" alt=""></div>
+        <div class="navbar-logo-text"><span>Get Right With God</span><span>Ministries</span></div>
+      </a>
+      <nav class="navbar-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="navbar-actions">
+        <a href="cart.html" class="navbar-cart" aria-label="Shopping cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" aria-live="polite">0</span>
+        </a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="cart.html" class="btn btn-primary">View Cart</a>
+  </nav>
+
+  <main>
+    <section class="product-detail-section">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:32px;">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          <a href="shop.html">Shop</a>
+          <span class="breadcrumb-sep">›</span>
+          <span id="breadcrumb-name">Product</span>
+        </nav>
+
+        <div class="product-detail-grid">
+          <div class="product-gallery reveal-left">
+            <div class="product-main-img" id="product-main-img">📖</div>
+            <div class="product-thumbs" id="product-thumbs">
+              <div class="product-thumb active">📖</div>
+              <div class="product-thumb">✨</div>
+              <div class="product-thumb">📦</div>
+            </div>
+          </div>
+
+          <div class="product-info-panel reveal-right">
+            <div>
+              <span class="product-info-category" id="product-category">Books</span>
+              <h1 class="product-info-name" id="product-name">Sacred Heart Study Bible</h1>
+            </div>
+            <div class="product-info-rating">
+              <span class="star-rating">★★★★★</span>
+              <span class="product-rating-count" id="product-reviews">(234 reviews)</span>
+              <span class="badge badge-gold" id="product-badge">Bestseller</span>
+            </div>
+            <div class="product-info-price">
+              <span class="main-price" id="product-price">$49.99</span>
+              <span class="orig-price" id="product-orig-price">$64.99</span>
+            </div>
+            <p class="product-info-desc" id="product-description">
+              A comprehensive study Bible featuring detailed commentary, cross-references, and devotional notes to deepen your relationship with God.
+            </p>
+
+            <div class="product-qty-row">
+              <div class="qty-input-wrap" aria-label="Quantity selector">
+                <button id="qty-down" aria-label="Decrease quantity">−</button>
+                <input type="number" id="qty-input" value="1" min="1" max="99" aria-label="Quantity">
+                <button id="qty-up" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="btn btn-primary product-add-full" id="add-to-cart-btn">Add to Cart ✦</button>
+            </div>
+
+            <div class="product-features">
+              <div class="product-feature"><span class="product-feature-icon">✦</span><span>Free shipping on orders over $75</span></div>
+              <div class="product-feature"><span class="product-feature-icon">✦</span><span>Blessed and prayed over before shipping</span></div>
+              <div class="product-feature"><span class="product-feature-icon">✦</span><span>30-day return policy</span></div>
+              <div class="product-feature"><span class="product-feature-icon">✦</span><span>10% of each purchase supports ministry outreach</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="related-section">
+          <div class="section-header">
+            <span class="section-label reveal">✦ Continue Shopping</span>
+            <h2 class="section-title reveal reveal-delay-1">You May Also Love</h2>
+            <div class="divider-gold reveal reveal-delay-2"></div>
+          </div>
+          <div class="featured-products-grid" id="related-grid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><div class="footer-logo-icon"><img class="footer-logo-img" src="assets/images/logo.jpg" alt=""></div><div class="footer-logo-text">Get Right With God Ministries</div></div>
+          <p class="footer-tagline">Serving the faithful with sacred products, prayer, and love.</p>
+        </div>
+        <div class="footer-col"><h4>Shop</h4><div class="footer-links"><a href="shop.html">All Products</a><a href="shop.html?cat=books">Books</a><a href="shop.html?cat=jewelry">Jewelry</a></div></div>
+        <div class="footer-col"><h4>Ministry</h4><div class="footer-links"><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
+        <div class="footer-col"><h4>Help</h4><div class="footer-links"><a href="#">Shipping</a><a href="#">Returns</a></div></div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Get Right With God Ministries. All rights reserved.</p>
+        <nav class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DM WIDGET (same as other pages) -->
+  <div class="dm-trigger" id="dm-trigger"><button class="dm-btn" aria-expanded="false" aria-controls="dm-panel"><div class="dm-pulse-ring" aria-hidden="true"></div><div class="dm-pulse-ring-2" aria-hidden="true"></div><span class="dm-dove-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6.5L14 12l4 4-8 3 1-8 4 4 5.5-6.5c.7-.8.7-2 0-2.8-.8-.8-2-.8-2.8 0L12 12 7 7c-.8-.8-.8-2 0-2.8C7.8 3.4 9 3.4 9.8 4.2L12 6.5l2.5-2.8c1.4-1.5 3.8-1.5 5.2 0 1.5 1.4 1.5 3.8.3 5.3z"/></svg></span><div class="dm-tooltip">Send Us a Message</div><span class="dm-unread-badge">1</span></button></div>
+  <div class="dm-panel" id="dm-panel" role="dialog" aria-modal="true" aria-label="Divine Messenger"><div class="dm-panel-gold-strip" aria-hidden="true"></div><div class="dm-panel-header"><div class="dm-panel-header-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6.5L14 12l4 4-8 3 1-8 4 4 5.5-6.5c.7-.8.7-2 0-2.8-.8-.8-2-.8-2.8 0L12 12 7 7c-.8-.8-.8-2 0-2.8C7.8 3.4 9 3.4 9.8 4.2L12 6.5l2.5-2.8c1.4-1.5 3.8-1.5 5.2 0 1.5 1.4 1.5 3.8.3 5.3z"/></svg></div><div class="dm-panel-title-wrap"><div class="dm-panel-title">Divine Messenger</div><div class="dm-panel-subtitle">We reply within 24 hours</div></div><button class="dm-close-btn" aria-label="Close">×</button></div><div class="dm-tabs" role="tablist"><button class="dm-tab active" data-tab="dm-tab-message" role="tab">Message Us</button><button class="dm-tab" data-tab="dm-tab-whatsapp" role="tab">WhatsApp</button><button class="dm-tab" data-tab="dm-tab-prayer" role="tab">Prayer 🙏</button><div class="dm-tab-indicator" aria-hidden="true"></div></div><div class="dm-panel-body"><div class="dm-tab-content active" id="dm-tab-message" role="tabpanel"><form class="dm-form" id="dm-message-form" novalidate><div class="dm-field"><label for="dm-name">Name</label><input class="dm-input" type="text" id="dm-name" placeholder="Your blessed name" required></div><div class="dm-field"><label for="dm-email">Email</label><input class="dm-input" type="email" id="dm-email" placeholder="Your email" required></div><div class="dm-field"><label for="dm-topic">Topic</label><select class="dm-select" id="dm-topic"><option>I'm reaching out about...</option><option>Order Support</option><option>Product Question</option><option>General Inquiry</option></select></div><div class="dm-field"><label for="dm-message">Message</label><textarea class="dm-textarea" id="dm-message" rows="4" placeholder="Your message..." required></textarea></div><button type="submit" class="dm-submit-btn"><span class="btn-text">Send Message ✦</span><span class="btn-spinner"></span></button></form><div class="dm-success-state" aria-live="polite"><svg class="dm-checkmark-svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/><path d="M18 32l10 10 18-20"/></svg><div class="dm-confetti-container"></div><p class="dm-success-text">Message received.<br>God bless you! 🕊️</p></div></div><div class="dm-tab-content" id="dm-tab-whatsapp" role="tabpanel"><div class="dm-whatsapp-content"><div class="dm-wa-icon"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></div><p class="dm-wa-title">Chat with us instantly</p><div class="dm-wa-message-preview">"Hello! I'm interested in your products..."</div><div class="dm-wa-hours"><span>Mon–Sat, 9AM–6PM EST</span></div><button class="dm-wa-btn">Open WhatsApp</button></div></div><div class="dm-tab-content" id="dm-tab-prayer" role="tabpanel"><div class="dm-prayer-content"><div class="dm-prayer-header"><span class="dm-prayer-cross">✝</span><div><div class="dm-prayer-title">Submit a Prayer Request</div><div class="dm-prayer-sub">We pray over every request personally</div></div></div><form class="dm-form" id="dm-prayer-form" novalidate><div class="dm-field"><label>Your Prayer Need</label><textarea class="dm-textarea" rows="5" placeholder="Share your prayer need..." required style="min-height:120px;"></textarea></div><label class="dm-checkbox-row"><input type="checkbox"><span>Keep my request anonymous</span></label><label class="dm-checkbox-row"><input type="checkbox"><span>Notify me when prayed over</span></label><button type="submit" class="dm-prayer-submit">Send Prayer Request 🙏</button></form><div class="dm-prayer-success" aria-live="polite"><div class="dm-glow-circle"></div><p class="dm-success-text">Your prayer has been received.<br>You are covered. ✝️</p></div></div></div></div><div class="dm-panel-footer"><span>Powered by</span><span class="dm-footer-logo">Get Right With God Ministries</span></div></div>
+
+  <script src="js/cart.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/dm-widget.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get('id')) || 1;
+
+      function waitForProducts(cb) {
+        if (window.PRODUCTS) cb();
+        else setTimeout(() => waitForProducts(cb), 50);
+      }
+
+      waitForProducts(() => {
+        const product = window.PRODUCTS.find(p => p.id === id) || window.PRODUCTS[0];
+
+        document.title = `${product.name} — Get Right With God Ministries`;
+        document.getElementById('breadcrumb-name').textContent = product.name;
+        document.getElementById('product-category').textContent = product.category;
+        document.getElementById('product-name').textContent = product.name;
+        document.getElementById('product-price').textContent = `$${product.price.toFixed(2)}`;
+        document.getElementById('product-description').textContent = product.description;
+        document.getElementById('product-reviews').textContent = `(${product.reviews} reviews)`;
+        document.getElementById('product-main-img').textContent = product.emoji;
+
+        const origEl = document.getElementById('product-orig-price');
+        if (product.originalPrice) origEl.textContent = `$${product.originalPrice.toFixed(2)}`;
+        else origEl.style.display = 'none';
+
+        const badgeEl = document.getElementById('product-badge');
+        if (product.badge) { badgeEl.textContent = product.badge; badgeEl.className = `badge ${getBadgeClass(product.badge)}`; }
+        else badgeEl.style.display = 'none';
+
+        document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+          const qty = parseInt(document.getElementById('qty-input').value) || 1;
+          for (let i = 0; i < qty; i++) document.dispatchEvent(new CustomEvent('cart:add', { detail: { product } }));
+          const btn = document.getElementById('add-to-cart-btn');
+          btn.textContent = 'Added to Cart ✓';
+          btn.style.background = 'linear-gradient(135deg,#166534,#15803d)';
+          btn.style.color = '#4ade80';
+          setTimeout(() => { btn.textContent = 'Add to Cart ✦'; btn.style.background = ''; btn.style.color = ''; }, 2500);
+        });
+
+        document.getElementById('qty-down').addEventListener('click', () => {
+          const input = document.getElementById('qty-input');
+          if (parseInt(input.value) > 1) input.value = parseInt(input.value) - 1;
+        });
+        document.getElementById('qty-up').addEventListener('click', () => {
+          const input = document.getElementById('qty-input');
+          input.value = parseInt(input.value) + 1;
+        });
+
+        const relatedGrid = document.getElementById('related-grid');
+        if (relatedGrid && window.createProductCard) {
+          const related = window.PRODUCTS.filter(p => p.id !== product.id && p.category === product.category).slice(0, 4);
+          const fallback = window.PRODUCTS.filter(p => p.id !== product.id).slice(0, 4 - related.length);
+          [...related, ...fallback].slice(0, 4).forEach(p => {
+            relatedGrid.insertAdjacentHTML('beforeend', createProductCard(p));
+          });
+        }
+      });
+
+      function getBadgeClass(b) {
+        if (b === 'Bestseller') return 'badge-gold';
+        if (b === 'New') return 'badge-new';
+        if (b === 'Sale') return 'badge-sale';
+        return 'badge-gold';
+      }
+    })();
+  </script>
+</body>
+</html>

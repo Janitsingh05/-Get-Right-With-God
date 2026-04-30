@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Get Right With God Ministries — Our story, mission, and the team behind the ministry.">
+  <title>About — Get Right With God Ministries</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dm-widget.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .about-hero { padding-top: calc(var(--nav-height) + 80px); padding-bottom: 80px; text-align: center; position: relative; overflow: hidden; }
+    .about-hero::before { content: '✝'; position: absolute; font-size: 30rem; color: rgba(201,168,76,0.025); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; }
+    .about-hero h1 { font-size: clamp(2.2rem,5vw,4rem); margin-bottom: 20px; }
+    .about-hero p { font-family: var(--font-subhead); font-size: clamp(1rem,2vw,1.3rem); color: var(--color-gray-400); max-width: 600px; margin-inline: auto; font-style: italic; }
+
+    .about-story { background: var(--color-bg); }
+    .about-story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-story-img { aspect-ratio: 4/5; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 10rem; }
+    .about-story-text { display: flex; flex-direction: column; gap: 20px; }
+    .about-story-text p { font-family: var(--font-subhead); font-size: 1.1rem; color: var(--color-gray-400); line-height: 1.8; }
+
+    .about-values { background: var(--color-bg-card); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
+    .value-card { background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; transition: var(--transition-smooth); }
+    .value-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
+    .value-icon { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05)); border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
+    .value-title { font-family: var(--font-heading); font-size: 1rem; color: var(--color-gold); letter-spacing: 0.06em; }
+    .value-desc { font-size: 0.9rem; color: var(--color-gray-400); line-height: 1.6; }
+
+    .about-team { background: var(--color-bg); }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
+    .team-card { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .team-avatar { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold)); border: 3px solid rgba(201,168,76,0.4); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 2.5rem; color: #000; }
+    .team-name { font-family: var(--font-heading); font-size: 1rem; color: var(--color-white); }
+    .team-role { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-gold); }
+    .team-bio { font-size: 0.88rem; color: var(--color-gray-400); line-height: 1.6; max-width: 260px; }
+
+    .about-stats { background: var(--color-bg-card); border-top: 1px solid var(--color-border); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .stat-block { padding: 48px 32px; text-align: center; border-right: 1px solid var(--color-border); }
+    .stat-block:last-child { border-right: none; }
+    .stat-number { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3.5rem); color: var(--color-gold); margin-bottom: 8px; }
+    .stat-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-gray-400); }
+
+    @media (max-width: 768px) {
+      .about-story-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-story-img { aspect-ratio: 16/9; font-size: 6rem; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .stat-block:nth-child(2) { border-right: none; }
+      .stat-block { border-bottom: 1px solid var(--color-border); }
+    }
+  </style>
+</head>
+<body data-page="about">
+
+  <header class="navbar" role="banner">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Home">
+        <div class="navbar-logo-icon"><img class="navbar-logo-img" src="assets/images/logo.jpg" alt=""></div>
+        <div class="navbar-logo-text"><span>Get Right With God</span><span>Ministries</span></div>
+      </a>
+      <nav class="navbar-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html" class="active">About</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="navbar-actions">
+        <a href="cart.html" class="navbar-cart" aria-label="Shopping cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" aria-live="polite">0</span>
+        </a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="cart.html" class="btn btn-primary">View Cart</a>
+  </nav>
+
+  <main>
+    <section class="about-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>About</span></nav>
+        <span class="section-label">✦ Our Story</span>
+        <h1 class="section-title"><span class="gold-text">About</span> the Ministry</h1>
+        <div class="divider-gold"></div>
+        <p>Founded in faith, built on love, and sustained by prayer — we exist to serve God's people with excellence.</p>
+      </div>
+    </section>
+
+    <section class="about-story">
+      <div class="container">
+        <div class="about-story-grid">
+          <div class="about-story-img reveal-left">🕊️</div>
+          <div class="about-story-text reveal-right">
+            <span class="section-label">✦ How We Began</span>
+            <h2 class="section-title">A Ministry Born in Prayer</h2>
+            <div class="divider-gold" style="margin:0 0 8px;"></div>
+            <p>Get Right With God Ministries was born in 2010 from a simple prayer in a small apartment in Atlanta, Georgia. Our founder, Pastor Emmanuel Williams, felt a divine call to bridge the gap between sacred living and everyday life.</p>
+            <p>What began as a small table at a church market has grown into a full-fledged online ministry serving over 12,000 faithful souls across the United States and beyond.</p>
+            <p>Every product we offer is prayed over, carefully selected, and shipped with a blessing — because we believe that the sacred should touch every corner of your life.</p>
+            <a href="shop.html" class="btn btn-primary" style="margin-top:8px;">Shop Our Products ✦</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-stats" id="mission">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-block reveal"><div class="stat-number">12K+</div><div class="stat-label">Souls Served</div></div>
+          <div class="stat-block reveal reveal-delay-1"><div class="stat-number">50+</div><div class="stat-label">Blessed Products</div></div>
+          <div class="stat-block reveal reveal-delay-2"><div class="stat-number">15</div><div class="stat-label">Years of Ministry</div></div>
+          <div class="stat-block reveal reveal-delay-3"><div class="stat-number">4.9★</div><div class="stat-label">Avg. Rating</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-values">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label reveal">✦ What We Stand For</span>
+          <h2 class="section-title reveal reveal-delay-1">Our Core Values</h2>
+          <div class="divider-gold reveal reveal-delay-2"></div>
+        </div>
+        <div class="values-grid">
+          <div class="value-card reveal"><div class="value-icon">✝</div><div class="value-title">Faith First</div><p class="value-desc">Every decision we make is guided by our unwavering faith in Jesus Christ and the Word of God.</p></div>
+          <div class="value-card reveal reveal-delay-1"><div class="value-icon">🕊️</div><div class="value-title">Prayer Over All</div><p class="value-desc">We pray over every product, every order, and every member of our community — without exception.</p></div>
+          <div class="value-card reveal reveal-delay-2"><div class="value-icon">✨</div><div class="value-title">Excellence</div><p class="value-desc">God deserves our best. We source only premium products worthy of representing His kingdom.</p></div>
+          <div class="value-card reveal reveal-delay-3"><div class="value-icon">❤️</div><div class="value-title">Community</div><p class="value-desc">10% of every purchase funds community outreach, feeding programs, and Gospel distribution.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-team" id="team">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label reveal">✦ The Faithful Few</span>
+          <h2 class="section-title reveal reveal-delay-1">Meet Our Team</h2>
+          <div class="divider-gold reveal reveal-delay-2"></div>
+          <p class="section-subtitle reveal reveal-delay-3">Spirit-led individuals committed to serving God's people with excellence and love.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card reveal"><div class="team-avatar">E</div><div class="team-name">Pastor Emmanuel Williams</div><div class="team-role">Founder & Senior Pastor</div><p class="team-bio">A man of deep faith and vision. Pastor Emmanuel has dedicated his life to bringing God's Word to all corners of the earth.</p></div>
+          <div class="team-card reveal reveal-delay-1"><div class="team-avatar">G</div><div class="team-name">Minister Grace Williams</div><div class="team-role">Co-Founder & Worship Leader</div><p class="team-bio">Grace brings warmth and anointing to everything she touches. Her heart for prayer is the cornerstone of our ministry.</p></div>
+          <div class="team-card reveal reveal-delay-2"><div class="team-avatar">J</div><div class="team-name">Deacon James Porter</div><div class="team-role">Operations Director</div><p class="team-bio">James ensures every order is fulfilled with care and every customer is treated as family in Christ.</p></div>
+          <div class="team-card reveal reveal-delay-3"><div class="team-avatar">R</div><div class="team-name">Sister Ruth Adeyemi</div><div class="team-role">Prayer Ministry Lead</div><p class="team-bio">Ruth oversees our prayer team and personally reviews every prayer request submitted through the ministry.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission-banner">
+      <div class="container">
+        <span class="section-label reveal">✦ Join Us</span>
+        <h2 class="section-title reveal reveal-delay-1"><span class="gold-text">Partner</span> With the Ministry</h2>
+        <div class="divider-gold reveal reveal-delay-2"></div>
+        <p class="reveal reveal-delay-3">Whether through shopping, donating, volunteering, or simply spreading the Word — there's a place for you in this ministry.</p>
+        <div class="mission-banner-cta reveal reveal-delay-4">
+          <a href="contact.html" class="btn btn-primary">Get Involved ✦</a>
+          <a href="shop.html" class="btn btn-outline">Shop & Give</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-icon"><img class="footer-logo-img" src="assets/images/logo.jpg" alt=""></div><div class="footer-logo-text">Get Right With God Ministries</div></div><p class="footer-tagline">Serving the faithful with sacred products, prayer, and love.</p></div>
+        <div class="footer-col"><h4>Shop</h4><div class="footer-links"><a href="shop.html">All Products</a><a href="shop.html?cat=books">Books</a><a href="shop.html?cat=jewelry">Jewelry</a></div></div>
+        <div class="footer-col"><h4>Ministry</h4><div class="footer-links"><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
+        <div class="footer-col"><h4>Help</h4><div class="footer-links"><a href="#">Shipping</a><a href="#">Returns</a></div></div>
+      </div>
+      <div class="footer-bottom"><p class="footer-copy">© 2026 Get Right With God Ministries. All rights reserved.</p><nav class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></nav></div>
+    </div>
+  </footer>
+
+  <!-- DM WIDGET -->
+  <div class="dm-trigger" id="dm-trigger"><button class="dm-btn" aria-expanded="false" aria-controls="dm-panel"><div class="dm-pulse-ring" aria-hidden="true"></div><div class="dm-pulse-ring-2" aria-hidden="true"></div><span class="dm-dove-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6.5L14 12l4 4-8 3 1-8 4 4 5.5-6.5c.7-.8.7-2 0-2.8-.8-.8-2-.8-2.8 0L12 12 7 7c-.8-.8-.8-2 0-2.8C7.8 3.4 9 3.4 9.8 4.2L12 6.5l2.5-2.8c1.4-1.5 3.8-1.5 5.2 0 1.5 1.4 1.5 3.8.3 5.3z"/></svg></span><div class="dm-tooltip">Send Us a Message</div><span class="dm-unread-badge">1</span></button></div>
+  <div class="dm-panel" id="dm-panel" role="dialog" aria-modal="true" aria-label="Divine Messenger"><div class="dm-panel-gold-strip" aria-hidden="true"></div><div class="dm-panel-header"><div class="dm-panel-header-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6.5L14 12l4 4-8 3 1-8 4 4 5.5-6.5c.7-.8.7-2 0-2.8-.8-.8-2-.8-2.8 0L12 12 7 7c-.8-.8-.8-2 0-2.8C7.8 3.4 9 3.4 9.8 4.2L12 6.5l2.5-2.8c1.4-1.5 3.8-1.5 5.2 0 1.5 1.4 1.5 3.8.3 5.3z"/></svg></div><div class="dm-panel-title-wrap"><div class="dm-panel-title">Divine Messenger</div><div class="dm-panel-subtitle">We reply within 24 hours</div></div><button class="dm-close-btn" aria-label="Close">×</button></div><div class="dm-tabs" role="tablist"><button class="dm-tab active" data-tab="dm-tab-message" role="tab">Message Us</button><button class="dm-tab" data-tab="dm-tab-whatsapp" role="tab">WhatsApp</button><button class="dm-tab" data-tab="dm-tab-prayer" role="tab">Prayer 🙏</button><div class="dm-tab-indicator" aria-hidden="true"></div></div><div class="dm-panel-body"><div class="dm-tab-content active" id="dm-tab-message" role="tabpanel"><form class="dm-form" id="dm-message-form" novalidate><div class="dm-field"><label for="dm-name">Name</label><input class="dm-input" type="text" id="dm-name" placeholder="Your blessed name" required></div><div class="dm-field"><label for="dm-email">Email</label><input class="dm-input" type="email" id="dm-email" placeholder="Your email" required></div><div class="dm-field"><label for="dm-topic">Topic</label><select class="dm-select" id="dm-topic"><option>I'm reaching out about...</option><option>Ministry Partnership</option><option>Donation</option><option>General Inquiry</option></select></div><div class="dm-field"><label for="dm-message">Message</label><textarea class="dm-textarea" id="dm-message" rows="4" placeholder="Your message..." required></textarea></div><button type="submit" class="dm-submit-btn"><span class="btn-text">Send Message ✦</span><span class="btn-spinner"></span></button></form><div class="dm-success-state" aria-live="polite"><svg class="dm-checkmark-svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/><path d="M18 32l10 10 18-20"/></svg><div class="dm-confetti-container"></div><p class="dm-success-text">Message received.<br>God bless you! 🕊️</p></div></div><div class="dm-tab-content" id="dm-tab-whatsapp" role="tabpanel"><div class="dm-whatsapp-content"><div class="dm-wa-icon"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg></div><p class="dm-wa-title">Chat with us instantly</p><div class="dm-wa-message-preview">"Hello! I'd like to partner with your ministry..."</div><div class="dm-wa-hours"><span>Mon–Sat, 9AM–6PM EST</span></div><button class="dm-wa-btn">Open WhatsApp</button></div></div><div class="dm-tab-content" id="dm-tab-prayer" role="tabpanel"><div class="dm-prayer-content"><div class="dm-prayer-header"><span class="dm-prayer-cross">✝</span><div><div class="dm-prayer-title">Submit a Prayer Request</div><div class="dm-prayer-sub">We pray over every request personally</div></div></div><form class="dm-form" id="dm-prayer-form" novalidate><div class="dm-field"><label>Your Prayer Need</label><textarea class="dm-textarea" rows="5" placeholder="Share your prayer need..." required style="min-height:120px;"></textarea></div><label class="dm-checkbox-row"><input type="checkbox"><span>Keep my request anonymous</span></label><label class="dm-checkbox-row"><input type="checkbox"><span>Notify me when prayed over</span></label><button type="submit" class="dm-prayer-submit">Send Prayer Request 🙏</button></form><div class="dm-prayer-success" aria-live="polite"><div class="dm-glow-circle"></div><p class="dm-success-text">Your prayer has been received.<br>You are covered. ✝️</p></div></div></div></div><div class="dm-panel-footer"><span>Powered by</span><span class="dm-footer-logo">Get Right With God Ministries</span></div></div>
+
+  <script src="js/cart.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/dm-widget.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your shopping cart — Get Right With God Ministries">
+  <title>Cart — Get Right With God Ministries</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dm-widget.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .cart-page { padding-top: calc(var(--nav-height) + 48px); padding-bottom: var(--section-pad); }
+    .cart-page-header { margin-bottom: 40px; }
+    .cart-page-header h1 { margin-bottom: 8px; }
+    .cart-page-header p { color: var(--color-gray-400); font-family: var(--font-subhead); font-size: 1rem; }
+    .cart-layout { display: grid; grid-template-columns: 1fr 360px; gap: 40px; align-items: start; }
+
+    .cart-empty { text-align: center; padding: 80px 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .cart-empty-icon { font-size: 5rem; }
+    .cart-empty h3 { font-family: var(--font-heading); font-size: 1.4rem; color: var(--color-white); }
+    .cart-empty p { color: var(--color-gray-400); font-family: var(--font-subhead); }
+
+    .cart-table-wrap { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; }
+    .cart-table { width: 100%; }
+    .cart-table thead { background: var(--color-bg-elevated); border-bottom: 1px solid var(--color-border); }
+    .cart-table th { padding: 16px 20px; text-align: left; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-gray-400); }
+    .cart-table td { padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: middle; }
+    .cart-table tbody tr:last-child td { border-bottom: none; }
+    .cart-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+    .cart-product-cell { display: flex; align-items: center; gap: 14px; }
+    .cart-product-img { width: 64px; height: 64px; border-radius: var(--radius-sm); background: var(--color-bg-elevated); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; }
+    .cart-product-name { font-weight: 700; font-size: 0.9rem; color: var(--color-white); margin-bottom: 4px; }
+    .cart-product-cat { font-size: 0.72rem; color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+    .cart-price { font-family: var(--font-heading); color: var(--color-gold); font-size: 0.95rem; }
+    .cart-item-total { font-family: var(--font-heading); color: var(--color-white); font-size: 0.95rem; }
+
+    .qty-control { display: flex; align-items: center; border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; width: fit-content; }
+    .qty-btn { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: var(--color-bg-elevated); color: var(--color-white); font-size: 1.1rem; transition: background var(--transition-smooth); }
+    .qty-btn:hover { background: rgba(201,168,76,0.15); color: var(--color-gold); }
+    .qty-value { width: 44px; text-align: center; font-size: 0.9rem; color: var(--color-white); }
+
+    .cart-remove-btn { width: 32px; height: 32px; border-radius: 50%; color: var(--color-gray-600); font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: background var(--transition-smooth), color var(--transition-smooth); }
+    .cart-remove-btn:hover { background: rgba(239,68,68,0.15); color: #f87171; }
+
+    .cart-actions-row { display: flex; justify-content: space-between; align-items: center; padding: 20px; border-top: 1px solid var(--color-border); }
+    .cart-continue { font-size: 0.85rem; color: var(--color-gray-400); display: flex; align-items: center; gap: 6px; transition: color var(--transition-smooth); }
+    .cart-continue:hover { color: var(--color-gold); }
+
+    .cart-summary-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 28px; position: sticky; top: calc(var(--nav-height) + 20px); }
+    .cart-summary-title { font-family: var(--font-heading); font-size: 1rem; color: var(--color-gold); margin-bottom: 24px; letter-spacing: 0.06em; }
+    .summary-line { display: flex; justify-content: space-between; align-items: center; padding-block: 10px; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.9rem; color: var(--color-gray-400); }
+    .summary-line strong { color: var(--color-white); }
+    .summary-total-line { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; margin-top: 8px; }
+    .summary-total-label { font-family: var(--font-heading); font-size: 0.9rem; color: var(--color-white); letter-spacing: 0.06em; }
+    .summary-total { font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-gold); }
+
+    .promo-section { margin-block: 20px; }
+    .promo-input-row { display: flex; gap: 8px; }
+    .promo-input { flex: 1; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 10px 14px; color: var(--color-white); font-size: 0.85rem; min-width: 0; transition: border-color var(--transition-smooth); }
+    .promo-input:focus { outline: none; border-color: var(--color-gold); }
+    .promo-input::placeholder { color: var(--color-gray-600); }
+    .promo-btn { padding: 10px 16px; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-sm); color: var(--color-gold); font-size: 0.8rem; font-weight: 700; transition: var(--transition-smooth); white-space: nowrap; }
+    .promo-btn:hover { border-color: var(--color-gold); background: rgba(201,168,76,0.1); }
+    .promo-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gray-400); margin-bottom: 8px; }
+
+    .checkout-btn { width: 100%; padding: 16px; font-size: 0.9rem; margin-top: 20px; justify-content: center; }
+
+    .cart-badges { display: flex; gap: 12px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+    .trust-badge { display: flex; align-items: center; gap: 5px; font-size: 0.7rem; color: var(--color-gray-600); }
+    .trust-badge span:first-child { color: var(--color-gold); }
+
+    .shipping-note { font-size: 0.8rem; color: var(--color-gray-400); text-align: center; margin-top: 12px; }
+    .shipping-note strong { color: var(--color-gold); }
+
+    @media (max-width: 900px) {
+      .cart-layout { grid-template-columns: 1fr; }
+      .cart-summary-card { position: static; }
+    }
+    @media (max-width: 640px) {
+      .cart-table th:nth-child(2), .cart-table td:nth-child(2) { display: none; }
+      .cart-product-img { width: 52px; height: 52px; font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body data-page="cart">
+
+  <header class="navbar" role="banner">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Home">
+        <div class="navbar-logo-icon"><img class="navbar-logo-img" src="assets/images/logo.jpg" alt=""></div>
+        <div class="navbar-logo-text"><span>Get Right With God</span><span>Ministries</span></div>
+      </a>
+      <nav class="navbar-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="navbar-actions">
+        <a href="cart.html" class="navbar-cart" aria-label="Shopping cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" aria-live="polite">0</span>
+        </a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    <a href="cart.html" class="btn btn-primary">View Cart</a>
+  </nav>
+
+  <main class="cart-page">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:32px;"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><a href="shop.html">Shop</a><span class="breadcrumb-sep">›</span><span>Cart</span></nav>
+
+      <div class="cart-page-header">
+        <h1 class="section-title">Your <span class="gold-text">Cart</span></h1>
+        <p>Review your blessed selections before checkout.</p>
+      </div>
+
+      <div class="cart-layout">
+        <div>
+          <div id="cart-items">
+            <!-- Rendered by cart.js -->
+          </div>
+          <div style="margin-top:20px;" class="reveal">
+            <a href="shop.html" class="cart-continue">
+              ← Continue Shopping
+            </a>
+          </div>
+        </div>
+
+        <div id="cart-summary">
+          <div class="cart-summary-card">
+            <div class="cart-summary-title">Order Summary</div>
+            <div class="summary-line">
+              <span>Subtotal</span>
+              <strong class="summary-subtotal">$0.00</strong>
+            </div>
+            <div class="summary-line">
+              <span>Shipping</span>
+              <strong class="summary-shipping">—</strong>
+            </div>
+            <div class="summary-line">
+              <span>Tax (Est.)</span>
+              <strong>Calculated at checkout</strong>
+            </div>
+            <div class="summary-total-line">
+              <span class="summary-total-label">Total</span>
+              <span class="summary-total">$0.00</span>
+            </div>
+            <div class="promo-section">
+              <div class="promo-label">Promo Code</div>
+              <div class="promo-input-row">
+                <input type="text" class="promo-input" placeholder="Enter code" aria-label="Promo code">
+                <button class="promo-btn">Apply</button>
+              </div>
+            </div>
+            <button class="btn btn-primary checkout-btn" id="checkout-btn">
+              Proceed to Checkout ✦
+            </button>
+            <p class="shipping-note">Orders over <strong>$75</strong> ship FREE. Every purchase supports our ministry mission.</p>
+            <div class="cart-badges">
+              <span class="trust-badge"><span>✦</span><span>Secure Checkout</span></span>
+              <span class="trust-badge"><span>✦</span><span>Prayed Over</span></span>
+              <span class="trust-badge"><span>✦</span><span>30-Day Returns</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" id="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-icon"><img class="footer-logo-img" src="assets/images/logo.jpg" alt=""></div><div class="footer-logo-text">Get Right With God Ministries</div></div><p class="footer-tagline">Serving the faithful with sacred products, prayer, and love.</p></div>
+        <div class="footer-col"><h4>Shop</h4><div class="footer-links"><a href="shop.html">All Products</a><a href="shop.html?cat=books">Books</a></div></div>
+        <div class="footer-col"><h4>Ministry</h4><div class="footer-links"><a href="about.html">About</a><a href="contact.html">Contact</a></div></div>
+        <div class="footer-col"><h4>Help</h4><div class="footer-links"><a href="#">Shipping</a><a href="#">Returns</a></div></div>
+      </div>
+      <div class="footer-bottom"><p class="footer-copy">© 2026 Get Right With God Ministries. All rights reserved.</p><nav class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></nav></div>
+    </div>
+  </footer>
+
+  <!-- DM WIDGET -->
+  <div class="dm-trigger" id="dm-trigger"><button class="dm-btn" aria-expanded="false" aria-controls="dm-panel"><div class="dm-pulse-ring" aria-hidden="true"></div><div class="dm-pulse-ring-2" aria-hidden="true"></div><span class="dm-dove-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6.5L14 12l4 4-8 3 1-8 4 4 5.5-6.5c.7-.8.7-2 0-2.8-.8-.8-2-.8-2.8 0L12 12 7 7c-.8-.8-.8-2 0-2.8C7.8 3.4 9 3.4 9.8 4.2L12 6.5l2.5-2.8c1.4-1.5 3.8-1.5 5.2 0 1.5 1.4 1.5 3.8.3 5.3z"/></svg></span><div class="dm-tooltip">Send Us a Message</div><span class="dm-unread-badge">1</span></button></div>
+  <div class="dm-panel" id="dm-panel" role="dialog" aria-modal="true" aria-label="Divine Messenger"><div class="dm-panel-gold-strip" aria-hidden="true"></div><div class="dm-panel-header"><div class="dm-panel-header-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6.5L14 12l4 4-8 3 1-8 4 4 5.5-6.5c.7-.8.7-2 0-2.8-.8-.8-2-.8-2.8 0L12 12 7 7c-.8-.8-.8-2 0-2.8C7.8 3.4 9 3.4 9.8 4.2L12 6.5l2.5-2.8c1.4-1.5 3.8-1.5 5.2 0 1.5 1.4 1.5 3.8.3 5.3z"/></svg></div><div class="dm-panel-title-wrap"><div class="dm-panel-title">Divine Messenger</div><div class="dm-panel-subtitle">We reply within 24 hours</div></div><button class="dm-close-btn" aria-label="Close">×</button></div><div class="dm-tabs" role="tablist"><button class="dm-tab active" data-tab="dm-tab-message" role="tab">Message Us</button><button class="dm-tab" data-tab="dm-tab-whatsapp" role="tab">WhatsApp</button><button class="dm-tab" data-tab="dm-tab-prayer" role="tab">Prayer 🙏</button><div class="dm-tab-indicator" aria-hidden="true"></div></div><div class="dm-panel-body"><div class="dm-tab-content active" id="dm-tab-message" role="tabpanel"><form class="dm-form" id="dm-message-form" novalidate><div class="dm-field"><label for="dm-name">Name</label><input class="dm-input" type="text" id="dm-name" placeholder="Your blessed name" required></div><div class="dm-field"><label for="dm-email">Email</label><input class="dm-input" type="email" id="dm-email" placeholder="Your email" required></div><div class="dm-field"><label for="dm-topic">Topic</label><select class="dm-select" id="dm-topic"><option>I'm reaching out about...</option><option>Order Support</option><option>General Inquiry</option></select></div><div class="dm-field"><label for="dm-message">Message</label><textarea class="dm-textarea" id="dm-message" rows="4" placeholder="Your message..." required></textarea></div><button type="submit" class="dm-submit-btn"><span class="btn-text">Send Message ✦</span><span class="btn-spinner"></span></button></form><div class="dm-success-state" aria-live="polite"><svg class="dm-checkmark-svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30"/><path d="M18 32l10 10 18-20"/></svg><div class="dm-confetti-container"></div><p class="dm-success-text">Message received.<br>God bless you! 🕊️</p></div></div><div class="dm-tab-content" id="dm-tab-whatsapp" role="tabpanel"><div class="dm-whatsapp-content"><div class="dm-wa-icon"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"/></svg></div><p class="dm-wa-title">Chat with us instantly</p><div class="dm-wa-message-preview">"Hello! I need help with my order..."</div><div class="dm-wa-hours"><span>Mon–Sat, 9AM–6PM EST</span></div><button class="dm-wa-btn">Open WhatsApp</button></div></div><div class="dm-tab-content" id="dm-tab-prayer" role="tabpanel"><div class="dm-prayer-content"><div class="dm-prayer-header"><span class="dm-prayer-cross">✝</span><div><div class="dm-prayer-title">Submit a Prayer Request</div><div class="dm-prayer-sub">We pray over every request personally</div></div></div><form class="dm-form" id="dm-prayer-form" novalidate><div class="dm-field"><label>Your Prayer Need</label><textarea class="dm-textarea" rows="5" placeholder="Share your prayer need..." required style="min-height:120px;"></textarea></div><label class="dm-checkbox-row"><input type="checkbox"><span>Keep my request anonymous</span></label><label class="dm-checkbox-row"><input type="checkbox"><span>Notify me when prayed over</span></label><button type="submit" class="dm-prayer-submit">Send Prayer Request 🙏</button></form><div class="dm-prayer-success" aria-live="polite"><div class="dm-glow-circle"></div><p class="dm-success-text">Your prayer has been received.<br>You are covered. ✝️</p></div></div></div></div><div class="dm-panel-footer"><span>Powered by</span><span class="dm-footer-logo">Get Right With God Ministries</span></div></div>
+
+  <script src="js/cart.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/dm-widget.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('checkout-btn')?.addEventListener('click', () => {
+      alert('Checkout flow coming soon! Thank you for your blessing. 🙏');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get Right With God Ministries — Sacred products for your spiritual journey. Bibles, devotionals, jewelry, apparel, and more.">
+  <title>Get Right With God Ministries</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/testimonials.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dm-widget.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="home">
+
+  <!-- NAVBAR -->
+  <header class="navbar" role="banner">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Get Right With God Ministries Home">
+        <div class="navbar-logo-icon"><img class="navbar-logo-img" src="assets/images/logo.jpg" alt=""></div>
+        <div class="navbar-logo-text">
+          <span>Get Right With God</span>
+          <span>Ministries</span>
+        </div>
+      </a>
+      <nav class="navbar-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="navbar-actions">
+        <a href="cart.html" class="navbar-cart" aria-label="Shopping cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-badge" aria-live="polite" aria-label="Items in cart">0</span>
+        </a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <nav class="mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html" class="btn btn-primary">View Cart</a>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-bg-gradient" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <span class="hero-eyebrow">✦ Blessed Products for the Faithful</span>
+          <h1 class="hero-title">
+            Get Right<br>
+            <span class="gold-line">With God</span>
+          </h1>
+          <p class="hero-subtitle">
+            Curated sacred products to deepen your faith, enrich your devotion, and share God's love with the world.
+          </p>
+          <div class="hero-cta">
+            <a href="shop.html" class="btn btn-primary">Shop Now ✦</a>
+            <a href="about.html" class="btn btn-outline">Our Mission</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-value">12K+</div>
+              <div class="hero-stat-label">Souls Served</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">4.9★</div>
+              <div class="hero-stat-label">Avg. Rating</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">50+</div>
+              <div class="hero-stat-label">Products</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img src="assets/images/heroimg.jpg" alt="Sacred Heart of Jesus — Get Right With God Ministries">
+            <div class="hero-glow-ring" aria-hidden="true"></div>
+          </div>
+          <div class="hero-badge-floating">
+            <div class="hero-badge-icon">🕊️</div>
+            <div class="hero-badge-text">
+              <strong>Free Shipping</strong>
+              <span>On orders over $75</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <div class="hero-scroll-mouse"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="products-section" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label reveal">✦ Blessed Collection</span>
+          <h2 class="section-title reveal reveal-delay-1" id="featured-heading">Featured Products</h2>
+          <div class="divider-gold reveal reveal-delay-2"></div>
+          <p class="section-subtitle reveal reveal-delay-3">Handpicked sacred items to strengthen your walk with God.</p>
+        </div>
+        <div class="featured-products-grid" id="featured-grid"></div>
+        <div style="text-align:center; margin-top:48px;" class="reveal">
+          <a href="shop.html" class="btn btn-outline">View All Products ✦</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO SHOWCASE -->
+    <section class="video-section" aria-labelledby="video-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label reveal">✦ Ministry in Motion</span>
+          <h2 class="section-title reveal reveal-delay-1" id="video-heading">See Our Mission</h2>
+          <div class="divider-gold reveal reveal-delay-2"></div>
+        </div>
+        <div class="video-container reveal">
+          <video poster="" preload="none">
+            <source src="assets/videos/showcase.mp4" type="video/mp4">
+          </video>
+          <div class="video-play-overlay" id="video-play-btn" role="button" aria-label="Play video" tabindex="0">
+            <div class="video-play-btn">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label reveal">✦ What the Faithful Say</span>
+          <h2 class="section-title reveal reveal-delay-1" id="testimonials-heading">Blessed Testimonials</h2>
+          <div class="divider-gold reveal reveal-delay-2"></div>
+        </div>
+        <div class="testimonials-track-wrap">
+          <div class="testimonials-track">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">"The Sacred Heart Bible changed my morning devotionals completely. The commentary is deeply insightful and the quality is exceptional. God bless this ministry!"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">M</div>
+                <div>
+                  <div class="testimonial-author-name">Margaret T.</div>
+                  <div class="testimonial-author-loc">Atlanta, GA</div>
+                </div>
+                <span class="testimonial-verified">✓ Verified</span>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">"I ordered the Cross Necklace for my mother's birthday and she cried when she opened it. The craftsmanship is incredible. This is more than jewelry — it's a blessing."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">D</div>
+                <div>
+                  <div class="testimonial-author-name">David K.</div>
+                  <div class="testimonial-author-loc">Houston, TX</div>
+                </div>
+                <span class="testimonial-verified">✓ Verified</span>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">"The Prayer Journal has transformed my quiet time with the Lord. The scripture prompts are perfectly chosen. I've been recommending it to everyone at my church."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">S</div>
+                <div>
+                  <div class="testimonial-author-name">Sister Patricia</div>
+                  <div class="testimonial-author-loc">Chicago, IL</div>
+                </div>
+                <span class="testimonial-verified">✓ Verified</span>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">"Fast shipping, beautiful packaging, and the Anointing Oil Set smells heavenly. This ministry clearly puts love into every product. I'll be a lifelong customer."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">R</div>
+                <div>
+                  <div class="testimonial-author-name">Reverend James R.</div>
+                  <div class="testimonial-author-loc">Memphis, TN</div>
+                </div>
+                <span class="testimonial-verified">✓ Verified</span>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">"Wearing the Ministry Hoodie to church last Sunday got so many compliments. Quality is top-tier and the embroidery is stunning. Faith AND fashion — who knew?"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">A</div>
+                <div>
+                  <div class="testimonial-author-name">Alicia M.</div>
+                  <div class="testimonial-author-loc">Dallas, TX</div>
+                </div>
+                <span class="testimonial-verified">✓ Verified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="testimonials-prev" aria-label="Previous testimonial">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="carousel-dots" id="testimonials-dots" role="tablist" aria-label="Testimonials navigation"></div>
+          <button class="carousel-btn" id="testimonials-next" aria-label="Next testimonial">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION BANNER -->
+    <section class="mission-banner" aria-labelledby="mission-heading">
+      <div class="container">
+        <span class="section-label reveal">✦ Our Purpose</span>
+        <h2 class="section-title reveal reveal-delay-1" id="mission-heading">
+          <span class="gold-text">Spreading</span> God's Word,<br>One Blessed Product at a Time
+        </h2>
+        <div class="divider-gold reveal reveal-delay-2"></div>
+        <p class="reveal reveal-delay-3">
+          Every purchase from our ministry funds outreach programs, feeds families in need, and spreads the Gospel to the ends of the earth. When you shop with us, you're not just buying — you're participating in something eternal.
+        </p>
+        <div class="mission-banner-cta reveal reveal-delay-4">
+          <a href="about.html" class="btn btn-primary">Learn Our Story ✦</a>
+          <a href="shop.html" class="btn btn-ghost">Shop & Give</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section" aria-labelledby="newsletter-heading">
+      <div class="container">
+        <div class="newsletter-section-inner">
+          <div class="reveal-left">
+            <span class="section-label">✦ Stay Connected</span>
+            <h2 class="section-title" id="newsletter-heading">Receive Daily Blessings</h2>
+            <div class="divider-gold" style="margin:16px 0;"></div>
+            <p class="section-subtitle">
+              Subscribe for scripture devotionals, new product announcements, and exclusive ministry discounts — sent straight to your heart.
+            </p>
+          </div>
+          <div class="newsletter-section-form reveal-right">
+            <form class="newsletter-big-form" id="newsletter-form" novalidate>
+              <input type="email" class="newsletter-big-input" placeholder="Your email address" required aria-label="Email address">
+              <button type="submit" class="btn btn-primary">Subscribe ✦</button>
+            </form>
+            <p class="newsletter-disclaimer">
+              We respect your privacy. No spam — only blessings. Unsubscribe any time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon"><img class="footer-logo-img" src="assets/images/logo.jpg" alt=""></div>
+            <div class="footer-logo-text">Get Right With God Ministries</div>
+          </div>
+          <p class="footer-tagline">
+            Serving the faithful with sacred products, prayer, and the unwavering love of Jesus Christ since 2010.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+            <a href="#" class="footer-social-btn" aria-label="Twitter/X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <div class="footer-links">
+            <a href="shop.html">All Products</a>
+            <a href="shop.html?cat=books">Bibles & Books</a>
+            <a href="shop.html?cat=jewelry">Jewelry</a>
+            <a href="shop.html?cat=apparel">Apparel</a>
+            <a href="shop.html?cat=spiritual">Spiritual Tools</a>
+            <a href="shop.html?cat=home">Home Decor</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Ministry</h4>
+          <div class="footer-links">
+            <a href="about.html">Our Story</a>
+            <a href="about.html#mission">Our Mission</a>
+            <a href="about.html#team">The Team</a>
+            <a href="contact.html">Prayer Requests</a>
+            <a href="contact.html">Donate</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact Us</a>
+            <a href="contact.html#faq">FAQ</a>
+            <a href="#">Shipping Info</a>
+            <a href="#">Returns Policy</a>
+          </div>
+          <div class="footer-newsletter" style="margin-top:20px;">
+            <p>Quick sign-up for blessings:</p>
+            <form class="newsletter-form">
+              <input type="email" class="newsletter-input" placeholder="Your email" aria-label="Email">
+              <button type="submit" class="newsletter-submit">✦</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Get Right With God Ministries. Made with ✝ and love. All rights reserved.</p>
+        <nav class="footer-legal" aria-label="Legal links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DM WIDGET -->
+  <div class="dm-trigger" id="dm-trigger" aria-label="Open Divine Messenger">
+    <button class="dm-btn" aria-expanded="false" aria-controls="dm-panel">
+      <div class="dm-pulse-ring" aria-hidden="true"></div>
+      <div class="dm-pulse-ring-2" aria-hidden="true"></div>
+      <span class="dm-dove-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M20 6.5L14 12l4 4-8 3 1-8 4 4 5.5-6.5c.7-.8.7-2 0-2.8-.8-.8-2-.8-2.8 0L12 12 7 7c-.8-.8-.8-2 0-2.8C7.8 3.4 9 3.4 9.8 4.2L12 6.5l2.5-2.8c1.4-1.5 3.8-1.5 5.2 0 1.5 1.4 1.5 3.8.3 5.3z"/></svg>
+      </span>
+      <div class="dm-tooltip">Send Us a Message</div>
+      <span class="dm-unread-badge" aria-label="1 new message">1</span>
+    </button>
+  </div>
+
+  <div class="dm-panel" id="dm-panel" role="dialog" aria-modal="true" aria-label="Divine Messenger">
+    <div class="dm-panel-gold-strip" aria-hidden="true"></div>
+    <div class="dm-panel-header">
+      <div class="dm-panel-header-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M20 6.5L14 12l4 4-8 3 1-8 4 4 5.5-6.5c.7-.8.7-2 0-2.8-.8-.8-2-.8-2.8 0L12 12 7 7c-.8-.8-.8-2 0-2.8C7.8 3.4 9 3.4 9.8 4.2L12 6.5l2.5-2.8c1.4-1.5 3.8-1.5 5.2 0 1.5 1.4 1.5 3.8.3 5.3z"/></svg>
+      </div>
+      <div class="dm-panel-title-wrap">
+        <div class="dm-panel-title">Divine Messenger</div>
+        <div class="dm-panel-subtitle">We reply within 24 hours</div>
+      </div>
+      <button class="dm-close-btn" aria-label="Close Divine Messenger">×</button>
+    </div>
+
+    <div class="dm-tabs" role="tablist" aria-label="Contact options">
+      <button class="dm-tab active" data-tab="dm-tab-message" role="tab" aria-selected="true">Message Us</button>
+      <button class="dm-tab" data-tab="dm-tab-whatsapp" role="tab" aria-selected="false">WhatsApp</button>
+      <button class="dm-tab" data-tab="dm-tab-prayer" role="tab" aria-selected="false">Prayer 🙏</button>
+      <div class="dm-tab-indicator" aria-hidden="true"></div>
+    </div>
+
+    <div class="dm-panel-body">
+      <!-- TAB 1: Message Us -->
+      <div class="dm-tab-content active" id="dm-tab-message" role="tabpanel">
+        <form class="dm-form" id="dm-message-form" novalidate>
+          <div class="dm-field">
+            <label for="dm-name">Name</label>
+            <input class="dm-input" type="text" id="dm-name" name="name" placeholder="Your blessed name" required>
+          </div>
+          <div class="dm-field">
+            <label for="dm-email">Email</label>
+            <input class="dm-input" type="email" id="dm-email" name="email" placeholder="Your email" required>
+          </div>
+          <div class="dm-field">
+            <label for="dm-topic">Topic</label>
+            <select class="dm-select" id="dm-topic" name="topic">
+              <option value="">I'm reaching out about...</option>
+              <option value="order">Order Support</option>
+              <option value="product">Product Question</option>
+              <option value="partnership">Ministry Partnership</option>
+              <option value="donation">Donation</option>
+              <option value="general">General Inquiry</option>
+            </select>
+          </div>
+          <div class="dm-field">
+            <label for="dm-message">Message</label>
+            <textarea class="dm-textarea" id="dm-message" name="message" rows="4" placeholder="Your message..." required></textarea>
+          </div>
+          <button type="submit" class="dm-submit-btn">
+            <span class="btn-text">Send Message ✦</span>
+            <span class="btn-spinner"></span>
+          </button>
+        </form>
+        <div class="dm-success-state" aria-live="polite">
+          <svg class="dm-checkmark-svg" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="30"/>
+            <path d="M18 32l10 10 18-20"/>
+          </svg>
+          <div class="dm-confetti-container" aria-hidden="true"></div>
+          <p class="dm-success-text">Message received.<br>God bless you! 🕊️</p>
+        </div>
+      </div>
+
+      <!-- TAB 2: WhatsApp -->
+      <div class="dm-tab-content" id="dm-tab-whatsapp" role="tabpanel">
+        <div class="dm-whatsapp-content">
+          <div class="dm-wa-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </div>
+          <p class="dm-wa-title">Chat with us instantly on WhatsApp</p>
+          <div class="dm-wa-message-preview">
+            "Hello! I'm interested in your blessed products from Get Right With God Ministries..."
+          </div>
+          <div class="dm-wa-hours">
+            <span>Available Mon–Sat, 9AM–6PM EST</span>
+          </div>
+          <button class="dm-wa-btn">Open WhatsApp</button>
+        </div>
+      </div>
+
+      <!-- TAB 3: Prayer Request -->
+      <div class="dm-tab-content" id="dm-tab-prayer" role="tabpanel">
+        <div class="dm-prayer-content">
+          <div class="dm-prayer-header">
+            <span class="dm-prayer-cross">✝</span>
+            <div>
+              <div class="dm-prayer-title">Submit a Prayer Request</div>
+              <div class="dm-prayer-sub">Our team prays over every request personally</div>
+            </div>
+          </div>
+          <form class="dm-form" id="dm-prayer-form" novalidate>
+            <div class="dm-field">
+              <label for="dm-prayer-text">Your Prayer Need</label>
+              <textarea class="dm-textarea" id="dm-prayer-text" name="prayer" rows="5" placeholder="Share your prayer need..." required style="min-height:120px;"></textarea>
+            </div>
+            <label class="dm-checkbox-row">
+              <input type="checkbox" name="anonymous">
+              <span>Keep my request anonymous</span>
+            </label>
+            <label class="dm-checkbox-row">
+              <input type="checkbox" name="notify">
+              <span>Notify me when prayed over</span>
+            </label>
+            <button type="submit" class="dm-prayer-submit">
+              Send Prayer Request 🙏
+            </button>
+          </form>
+          <div class="dm-prayer-success" aria-live="polite">
+            <div class="dm-glow-circle" aria-hidden="true"></div>
+            <p class="dm-success-text">Your prayer has been received.<br>You are covered. ✝️</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dm-panel-footer">
+      <span>Powered by</span>
+      <span class="dm-footer-logo">Get Right With God Ministries</span>
+    </div>
+  </div>
+
+  <script src="js/cart.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/dm-widget.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('video-play-btn')?.addEventListener('click', function() {
+      const video = this.previousElementSibling;
+      if (video && video.tagName === 'VIDEO') {
+        video.play();
+        this.style.display = 'none';
+      }
+    });
+
+    document.getElementById('newsletter-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button');
+      btn.textContent = 'Subscribed ✓';
+      btn.style.background = 'linear-gradient(135deg,#166534,#15803d)';
+      btn.style.color = '#4ade80';
+    });
+  </script>
+</body>
+</html>
