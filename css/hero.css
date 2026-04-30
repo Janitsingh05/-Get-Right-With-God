@@ -3,9 +3,9 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   overflow: hidden;
-  padding: 0 6% 0 0;
+  padding: 0 0 0 6%;
   background-image: url('../assets/images/heroimg.jpg');
   background-size: cover;
   background-position: center center;
@@ -21,7 +21,7 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to left,
+    to right,
     rgba(0, 0, 0, 0.78) 0%,
     rgba(0, 0, 0, 0.40) 50%,
     rgba(0, 0, 0, 0.05) 100%
@@ -39,7 +39,7 @@
   padding-inline: clamp(20px, 4vw, 64px);
   padding-top: var(--nav-height);
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
 }
@@ -50,7 +50,7 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
-  text-align: right;
+  text-align: left;
   padding: 40px 44px;
   background: rgba(0, 0, 0, 0.38);
   backdrop-filter: blur(10px);
@@ -69,7 +69,7 @@
 .hero-eyebrow {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 12px;
   font-size: 0.75rem;
   font-weight: 700;
@@ -79,15 +79,15 @@
 }
 
 .hero-eyebrow::before {
-  display: none;
-}
-
-.hero-eyebrow::after {
   content: '';
   display: block;
   width: 32px;
   height: 1px;
   background: var(--color-gold);
+}
+
+.hero-eyebrow::after {
+  display: none;
 }
 
 .hero-title {
@@ -96,7 +96,7 @@
   font-weight: 900;
   line-height: 1.05;
   color: #FFFFFF;
-  text-align: right;
+  text-align: left;
 }
 
 .hero-title .gold-line {
@@ -114,14 +114,14 @@
   font-weight: 300;
   font-style: italic;
   line-height: 1.6;
-  text-align: right;
+  text-align: left;
 }
 
 .hero-cta {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .hero-stats {
@@ -129,7 +129,7 @@
   gap: 36px;
   padding-top: 12px;
   border-top: 1px solid rgba(201, 168, 76, 0.3);
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .hero-stat-value {
@@ -215,7 +215,7 @@
     justify-content: center;
   }
 
-  .hero-eyebrow::after {
+  .hero-eyebrow::before {
     display: none;
   }
 
