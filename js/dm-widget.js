@@ -165,7 +165,7 @@
   if (waBtn) {
     waBtn.addEventListener('click', () => {
       const msg = encodeURIComponent("Hello! I'm interested in your blessed products from Get Right With God Ministries.");
-      window.open(`https://wa.me/15551234567?text=${msg}`, '_blank');
+      window.open(`https://wa.me/15783934937?text=${msg}`, '_blank');
     });
   }
 
