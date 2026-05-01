@@ -221,3 +221,107 @@ p {
 .breadcrumb-sep {
   color: var(--color-text-muted);
 }
+
+/* YouTube Section */
+.yt-section {
+  background: var(--color-bg-card);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.yt-videos-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.yt-embed-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+.yt-embed-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.yt-video-label {
+  padding: 14px 4px 0;
+}
+
+.yt-video-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.yt-video-title {
+  font-family: var(--font-subhead);
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  text-shadow: var(--shadow-text-body);
+}
+
+.yt-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.yt-subscribe-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: border-color var(--transition-smooth), background var(--transition-smooth);
+}
+
+.yt-subscribe-cta:hover {
+  border-color: rgba(255,0,0,0.4);
+  background: rgba(255,0,0,0.06);
+}
+
+.yt-subscribe-cta > svg:first-child {
+  color: #ff0000;
+  flex-shrink: 0;
+}
+
+.yt-sub-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-shadow: var(--shadow-text-body);
+}
+
+.yt-sub-handle {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .yt-videos-grid {
+    grid-template-columns: 1fr;
+  }
+}
